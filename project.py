@@ -42,7 +42,9 @@ def editMenuItem(restaurant_id, menu_id):
         session.add(editItem)
         session.commit()
         return redirect(url_for('restaurantMenu', restaurant_id=restaurant_id))
-    return "Page to edit a menu item. Task 2 complete!"
+    else:
+        return render_template('editmenuitem.html', restaurant_id=restaurant_id,
+          menu_id=menu_id, i=editItem)
 
 
 # Task 3: Create route for deleteMenuItem function here
