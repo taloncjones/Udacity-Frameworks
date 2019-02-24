@@ -49,7 +49,7 @@ def editMenuItem(restaurant_id, menu_id):
 
 
 # Task 3: Create route for deleteMenuItem function here
-@app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/delete/')
+@app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/delete/', methods=['GET', 'POST'])
 def deleteMenuItem(restaurant_id, menu_id):
     return "Page to delete a menu item. Task 3 complete!"
 
