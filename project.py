@@ -14,6 +14,7 @@ session = DBSession()
 
 # Output menu of restaurant specified by /restaurant/<id>/ path
 @app.route('/')
+@app.route('/restaurants/')
 @app.route('/restaurants/<int:restaurant_id>/')
 def restaurantMenu(restaurant_id=1):
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
