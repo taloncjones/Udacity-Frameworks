@@ -19,7 +19,9 @@ def HelloWorld():
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant.id)
     output = ""
     for i in items:
-        output += i.name
+        output += "%s<br>" % i.name
+        output += "%s<br>" % i.price
+        output += "%s<br>" % i.description
         output += "<br>"
     return output
 
