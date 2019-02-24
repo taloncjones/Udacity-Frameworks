@@ -36,6 +36,12 @@ def newMenuItem(restaurant_id):
 # Task 2: Create route for editMenuItem function here
 @app.route('/restaurants/<int:restaurant_id>/<int:menu_id>/edit/')
 def editMenuItem(restaurant_id, menu_id):
+    if request.method == 'POST':
+        editItem = session.query(MenuItem).filter_by(id=menu_id).one()
+        editItem.name = request.form['name']
+        session.add(editItem)
+        session.commit()
+        return redirect(url_for('restaurantMenu', restaurant_id=restaurant_id))
     return "Page to edit a menu item. Task 2 complete!"
 
 
