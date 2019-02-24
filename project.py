@@ -15,14 +15,14 @@ session = DBSession()
 # Output menu of restaurant specified by /restaurant/<id>/ path
 @app.route('/')
 @app.route('/restaurants/<int:restaurant_id>/')
-def restaurantMenu(restaurant_id):
+def restaurantMenu(restaurant_id=1):
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant_id)
     return render_template('menu.html', restaurant=restaurant, items=items)
 
 
 # Task 1: Create route for newMenuItem function here
-@app.route('/restaurants/<int:restaurant_id>/new/')
+@app.route('/restaurants/<int:restaurant_id>/new/', methods=['GET', 'POST'])
 def newMenuItem(restaurant_id):
     return "Page to create a new menu item. Task 1 complete!"
 
