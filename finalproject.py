@@ -38,7 +38,7 @@ def newRestaurant():
         return render_template('newrestaurant.html')
 
 # Route for editing a restaurant
-@app.route('/restaurants/<int:rest_id>/edit/')
+@app.route('/restaurants/<int:rest_id>/edit/', methods=['GET', 'POST'])
 def editRestaurant(rest_id):
     return "Edit restaurant %s" % rest_id
 
