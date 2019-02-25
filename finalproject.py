@@ -40,7 +40,15 @@ def newRestaurant():
 # Route for editing a restaurant
 @app.route('/restaurants/<int:rest_id>/edit/', methods=['GET', 'POST'])
 def editRestaurant(rest_id):
-    return "Edit restaurant %s" % rest_id
+    editRest = session.query(Restaurant).filter_by(id=rest_id).one()
+    if request.method == 'POST':
+        if request.form['name']:
+            editRest.name = request.form['name']
+        session.add(editRest)
+        session.commit()
+        return redirect(url_for('allRestaurants'))
+    else:
+        return render_template('editrestaurant.html', rest_id=rest_id, rest=editRest)
 
 # Route for deleting a restaurant
 @app.route('/restaurants/<int:rest_id>/delete/')
