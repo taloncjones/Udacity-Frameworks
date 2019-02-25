@@ -23,7 +23,8 @@ session = DBSession()
 @app.route('/')
 @app.route('/restaurants/')
 def allRestaurants():
-    return "List of restaurants"
+    restaurants = session.query(Restaurant).all()
+    return render_template('restaurants.html', restaurants=restaurants)
 
 # Route for adding a new restaurant
 @app.route('/restaurants/new/')
