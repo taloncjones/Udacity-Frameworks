@@ -27,7 +27,7 @@ def allRestaurants():
     return render_template('restaurants.html', restaurants=restaurants)
 
 # Route for adding a new restaurant
-@app.route('/restaurants/new/')
+@app.route('/restaurants/new/', methods=['GET', 'POST'])
 def newRestaurant():
     if request.method == 'POST':
         newRest = Restaurant(name=request.form['name'])
