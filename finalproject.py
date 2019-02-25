@@ -48,7 +48,7 @@ def editRestaurant(rest_id):
         session.commit()
         return redirect(url_for('allRestaurants'))
     else:
-        return render_template('editrestaurant.html', rest_id=rest_id, rest=editRest)
+        return render_template('editrestaurant.html', rest=editRest)
 
 # Route for deleting a restaurant
 @app.route('/restaurants/<int:rest_id>/delete/')
