@@ -8,6 +8,7 @@
         <form action='{{url_for('editRestaurant', rest_id=rest.id)}}' method='POST'>
             <p>Name: <input type='text' size='30' name='name' placeholder='{{rest.name}}'></p>
             <input type='submit' value='Edit'>
+            <a href='{{url_for('allRestaurants')}}'>Cancel</a>
         </form>
 
     </body>
