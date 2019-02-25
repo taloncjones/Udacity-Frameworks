@@ -29,7 +29,13 @@ def allRestaurants():
 # Route for adding a new restaurant
 @app.route('/restaurants/new/')
 def newRestaurant():
-    return "New restaurant"
+    if request.method == 'POST':
+        newRest = Restaurant(name=request.form['name'])
+        session.add(newRest)
+        session.commit()
+        return redirect(url_for('allRestaurants'))
+    else:
+        return render_template('newrestaurant.html')
 
 # Route for editing a restaurant
 @app.route('/restaurants/<int:rest_id>/edit/')
