@@ -13,11 +13,15 @@ session = DBSession()
 
 
 # Make API Endpoint (GET Requests)
+# Output menu of restaurant specified by /restaurant/<id>/ path in JSON
 @app.route('/restaurants/<int:restaurant_id>/menu/JSON')
 def restaurantMenuJSON(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant_id).all()
     return jsonify(MenuItems=[i.serialize for i in items])
+
+
+# Output menu item specified by /restaurants/<r_id>/menu/<i_id>/JSON path in JSON
 
 
 # Output menu of restaurant specified by /restaurant/<id>/ path
