@@ -3,11 +3,11 @@
     </head>
 
     <body>
-        <h1>New Restaurant</h1>
+        <h1>Edit Restaurant</h1>
 
-        <form action="{{url_for('newRestaurant')}}" method='POST'>
-            <p>Name: <input type='text' size='30' name='name'></p>
-            <input type='submit' value='Create'>
+        <form action='{{url_for('editRestaurant', rest_id=rest.id)}}' method='POST'>
+            <p>Name: <input type='text' size='30' name='name' placeholder='{{rest.name}}'></p>
+            <input type='submit' value='Edit'>
         </form>
 
     </body>
