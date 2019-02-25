@@ -3,11 +3,10 @@
     </head>
 
     <body>
-        <h1>New Restaurant</h1>
+        <h1>Are you sure you want to delete {{rest.name}}?</h1>
 
-        <form action='{{url_for('newRestaurant')}}' method='POST'>
-            <p>Name: <input type='text' size='30' name='name'></p>
-            <input type='submit' value='Create'>
+        <form action='{{url_for('deleteRestaurant', rest_id=rest.id)}}' method='POST'>
+            <input type='submit' value='Delete'>
             <a href='{{url_for('allRestaurants')}}'>Cancel</a>
         </form>
 
