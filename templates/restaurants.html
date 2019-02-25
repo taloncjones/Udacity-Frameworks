@@ -11,7 +11,7 @@
             </div>
             <div>
                 <span><a href='{{url_for('editRestaurant', rest_id=r.id)}}'>Edit</a></span>
-                <span><p>Delete</p></span>
+                <span><a href='{{url_for('deleteRestaurant', rest_id=r.id)}}'>Delete</a></span>
             </div>
         {% endfor %}
 
