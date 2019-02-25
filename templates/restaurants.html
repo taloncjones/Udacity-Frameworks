@@ -10,7 +10,7 @@
                 <p>{{r.name}}</p>
             </div>
             <div>
-                <span><p>Edit</p></span>
+                <span><a href='{{url_for('editRestaurant', rest_id=r.id)}}'>Edit</a></span>
                 <span><p>Delete</p></span>
             </div>
         {% endfor %}
