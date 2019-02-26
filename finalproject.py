@@ -24,7 +24,7 @@ session = DBSession()
 @app.route('/restaurants/')
 def allRestaurants():
     restaurants = session.query(Restaurant).all()
-    return render_template('restaurants.html', restaurants=restaurants)
+    return render_template('restaurants-final.html', restaurants=restaurants)
 
 # Route for adding a new restaurant
 @app.route('/restaurants/new/', methods=['GET', 'POST'])
@@ -35,7 +35,7 @@ def newRestaurant():
         session.commit()
         return redirect(url_for('allRestaurants'))
     else:
-        return render_template('newrestaurant.html')
+        return render_template('newrestaurant-final.html')
 
 # Route for editing a restaurant
 @app.route('/restaurants/<int:rest_id>/edit/', methods=['GET', 'POST'])
@@ -48,7 +48,7 @@ def editRestaurant(rest_id):
         session.commit()
         return redirect(url_for('allRestaurants'))
     else:
-        return render_template('editrestaurant.html', rest=editRest)
+        return render_template('editrestaurant-final.html', rest=editRest)
 
 # Route for deleting a restaurant
 @app.route('/restaurants/<int:rest_id>/delete/', methods=['GET', 'POST'])
@@ -59,7 +59,7 @@ def deleteRestaurant(rest_id):
         session.commit()
         return redirect(url_for('allRestaurants'))
     else:
-        return render_template('deleterestaurant.html', rest=deleteRest)
+        return render_template('deleterestaurant-final.html', rest=deleteRest)
 
 # Routes for restaurant menu specified by <rest_id>
 @app.route('/restaurants/<int:rest_id>/')
