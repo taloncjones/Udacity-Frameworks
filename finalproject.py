@@ -96,7 +96,13 @@ def editMenuItem(rest_id, item_id):
 # Route for deleting a restaurant menu item
 @app.route('/restaurants/<int:rest_id>/<int:item_id>/delete/')
 def deleteMenuItem(rest_id, item_id):
-    return "Delete menu item %s" % item_id
+    deleteItem = session.query(MenuItem).filter_by(id=item_id).one()
+    if request.method == 'POST':
+        session.delete(deleteItem)
+        session.commit()
+        return redirect(url_for('restaurantMenu', rest_id=rest_id))
+    else:
+        return render_template('deletemenuitem-final.html', rest_id=rest_id, item=deleteItem)
 
 # Run if called by file finalproject.py
 if __name__ == '__main__':
