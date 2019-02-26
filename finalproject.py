@@ -94,7 +94,7 @@ def editMenuItem(rest_id, item_id):
         return render_template('editmenuitem-final.html', rest_id=rest_id, item=editItem)
 
 # Route for deleting a restaurant menu item
-@app.route('/restaurants/<int:rest_id>/<int:item_id>/delete/')
+@app.route('/restaurants/<int:rest_id>/<int:item_id>/delete/', methods=['GET', 'POST'])
 def deleteMenuItem(rest_id, item_id):
     deleteItem = session.query(MenuItem).filter_by(id=item_id).one()
     if request.method == 'POST':
