@@ -72,7 +72,13 @@ def restaurantMenu(rest_id):
 # Route for adding a new restaurant menu item
 @app.route('/restaurants/<int:rest_id>/new/')
 def newMenuItem(rest_id):
-    return "New menu item for restaurant %s" % rest_id
+    if request.method == 'POST':
+        newItem = MenuItem(name=request.form['name'], restaurant_id=rest_id)
+        session.add(newItem)
+        session.commit()
+        return redirect(url_for('restaurantMenu', rest_id=rest_id))
+    else:
+        return render_template('newmenuitem-final.html', rest_id=rest_id)
 
 # Route for editing a restaurant menu item
 @app.route('/restaurants/<int:rest_id>/<int:item_id>/edit/')
