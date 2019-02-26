@@ -83,7 +83,15 @@ def newMenuItem(rest_id):
 # Route for editing a restaurant menu item
 @app.route('/restaurants/<int:rest_id>/<int:item_id>/edit/')
 def editMenuItem(rest_id, item_id):
-    return "Edit menu item %s" % item_id
+    editItem = session.query(MenuItem).filter_by(id=item_id).one()
+    if request.method == 'POST':
+        if request.form['name']:
+            editItem.name = request.form['name']
+        session.add(editItem)
+        session.commit()
+        return redirect(url_form('restaurantMenu', rest_id=rest_id))
+    else:
+        return render_template('editmenuitem-final.html', rest_id=rest_id, item=editItem)
 
 # Route for deleting a restaurant menu item
 @app.route('/restaurants/<int:rest_id>/<int:item_id>/delete/')
