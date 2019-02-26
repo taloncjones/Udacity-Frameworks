@@ -3,12 +3,12 @@
     </head>
 
     <body>
-        <h1>New Restaurant</h1>
+        <h1>New Menu Item</h1>
 
-        <form action='{{url_for('newRestaurant')}}' method='POST'>
+        <form action='{{url_for('newMenuItem'), rest_id=rest_id}}' method='POST'>
             <p>Name: <input type='text' size='30' name='name'></p>
             <input type='submit' value='Create'>
-            <a href='{{url_for('allRestaurants')}}'>Cancel</a>
+            <a href='{{url_for('restaurantMenu', rest_id=rest_id)}}'>Cancel</a>
         </form>
 
     </body>
