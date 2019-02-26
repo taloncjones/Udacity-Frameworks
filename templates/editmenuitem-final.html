@@ -16,9 +16,9 @@
                     <dd><input type='text' size='8' name='price' placeholder='{{item.price}}'></dd>
                 <dt>Course:</dt>
                     {% if item.course == 'Appetizer' %}
-                        <dd><input type='radio' name='course' value='Appetizer' checked>Appetizer</dd>
+                        <dd><input type='radio' name='course' value='Appetizer' checked required>Appetizer</dd>
                     {% else %}
-                        <dd><input type='radio' name='course' value='Appetizer'>Appetizer</dd>
+                        <dd><input type='radio' name='course' value='Appetizer' required>Appetizer</dd>
                     {% endif %}
                     {% if item.course == 'Entree' %}
                         <dd><input type='radio' name='course' value='Entree' checked>Entree</dd>
