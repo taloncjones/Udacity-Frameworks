@@ -89,7 +89,7 @@ def editMenuItem(rest_id, item_id):
             editItem.name = request.form['name']
         session.add(editItem)
         session.commit()
-        return redirect(url_form('restaurantMenu', rest_id=rest_id))
+        return redirect(url_for('restaurantMenu', rest_id=rest_id))
     else:
         return render_template('editmenuitem-final.html', rest_id=rest_id, item=editItem)
 
