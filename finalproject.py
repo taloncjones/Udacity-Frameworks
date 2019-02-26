@@ -87,6 +87,11 @@ def editMenuItem(rest_id, item_id):
     if request.method == 'POST':
         if request.form['name']:
             editItem.name = request.form['name']
+        if request.form['description']:
+            editItem.description = request.form['description']
+        if request.form['price']:
+            editItem.price = request.form['price']
+        editItem.course = request.form['course']
         session.add(editItem)
         session.commit()
         return redirect(url_for('restaurantMenu', rest_id=rest_id))
