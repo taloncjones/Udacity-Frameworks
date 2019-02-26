@@ -70,7 +70,7 @@ def restaurantMenu(rest_id):
     return render_template('menu-final.html', rest=restaurant, items=items)
 
 # Route for adding a new restaurant menu item
-@app.route('/restaurants/<int:rest_id>/new/')
+@app.route('/restaurants/<int:rest_id>/new/', methods=['GET', 'POST'])
 def newMenuItem(rest_id):
     if request.method == 'POST':
         newItem = MenuItem(name=request.form['name'], restaurant_id=rest_id)
