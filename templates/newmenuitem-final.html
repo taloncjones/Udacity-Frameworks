@@ -1,15 +1,22 @@
 <html>
     <head>
+        <link rel=stylesheet type=text/css href='{{url_for('static', filename='styles-final.css')}}'>
     </head>
 
     <body>
-        <h1>New Menu Item</h1>
+        <div class='pane'>
+            <h1>New Menu Item</h1>
 
-        <form action='{{url_for('newMenuItem', rest_id=rest_id)}}' method='POST'>
-            <p>Name: <input type='text' size='30' name='name'></p>
-            <input type='submit' value='Create'>
-            <a href='{{url_for('restaurantMenu', rest_id=rest_id)}}'>Cancel</a>
-        </form>
+            <form action='{{url_for('newMenuItem', rest_id=rest_id)}}' method='POST'>
+                <div class='banner'>
+                    <p>Name: <input type='text' size='30' name='name'></p>
+                </div>
+                <div class='options'>
+                    <input class='editAndDel' type='submit' value='Create'>
+                    <a class='editAndDel' href='{{url_for('restaurantMenu', rest_id=rest_id)}}'>Cancel</a>
+                </div>
+            </form>
+        </div>
 
     </body>
 </html>
