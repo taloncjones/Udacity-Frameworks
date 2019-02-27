@@ -12,8 +12,28 @@ h1 {
     border-bottom: 2px solid #eee;
 }
 
-p {
+p, dt {
     margin: 0px;
+    text-align: left;
+    padding: 5px 10px;
+    font-family: 'georgia', serif;
+    color: #29508e;
+}
+
+dd.course {
+    margin: 0px;
+    text-align: left;
+    padding: 2px 20px 7px;
+    font-family: 'georgia', serif;
+    color: #335a98;
+}
+
+dl {
+    margin: 0px;
+}
+
+input[type='radio']{
+    vertical-align: baseline;
 }
 
 input, textarea {
