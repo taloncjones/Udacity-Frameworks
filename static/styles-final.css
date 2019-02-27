@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+    background-color: #29508e;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: 'georgia', serif;
+    margin: 0;
+    left: 50%;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+}
+
+.pane {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    border: 2px solid;
+    border-radius: 25px;
+    padding: 0px;
+    margin: 5px;
+    border-color: #eee;
+    background-color: #29508e;
+    text-align: center;
+}
+
+.rName {
+    left: 50%;
+    text-align: center;
+}
+
+.editAndDel {
+    left: 50%;
+    text-align: center;
+}
