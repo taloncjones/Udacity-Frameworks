@@ -80,3 +80,31 @@ h1 {
 .editAndDel + .editAndDel {
     border-left: solid 1px #eee;
 }
+
+.footer {
+    left: 0px;
+    right: 0px;
+    border: 1px;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+
+.addToList {
+    display: inline-block;
+    word-wrap: break-word;
+    border: 1px;
+    border-radius: 0px 0px 20px 20px;
+    width: calc(100% - 6px);
+    height: 100%;
+    padding: 3px;
+    font-family: 'georgia', serif;
+    color: #29508e;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.addToList:hover {
+    background-color: #ddd;
+}
