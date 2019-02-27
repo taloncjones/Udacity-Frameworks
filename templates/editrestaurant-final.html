@@ -1,15 +1,22 @@
 <html>
     <head>
+        <link rel=stylesheet type=text/css href='{{url_for('static', filename='styles-final.css')}}'>
     </head>
 
     <body>
-        <h1>Edit Restaurant</h1>
+        <div class='pane'>
+            <h1>Edit Restaurant</h1>
 
-        <form action='{{url_for('editRestaurant', rest_id=rest.id)}}' method='POST'>
-            <p>Name: <input type='text' size='30' name='name' placeholder='{{rest.name}}'></p>
-            <input type='submit' value='Edit'>
-            <a href='{{url_for('allRestaurants')}}'>Cancel</a>
-        </form>
+            <form action='{{url_for('editRestaurant', rest_id=rest.id)}}' method='POST'>
+                <div class='banner'>
+                    <p>Name: <input type='text' size='30' name='name' placeholder='{{rest.name}}'></p>
+                </div>
+                <div class='options'>
+                    <input class='editAndDel' type='submit' value='Edit'>
+                    <a class='editAndDel' href='{{url_for('allRestaurants')}}'>Cancel</a>
+                </div>
+            </form>
+        </div>
 
     </body>
 </html>
