@@ -8,12 +8,12 @@
             <h1>Restaurant List:</h1>
 
             {% for r in restaurants %}
-                <div>
-                    <span class='rName'><a href='{{url_for('restaurantMenu', rest_id=r.id)}}'>{{r.name}}</a></span>
+                <div class='banner'>
+                    <a class='rName' href='{{url_for('restaurantMenu', rest_id=r.id)}}'>{{r.name}}</a>
                 </div>
-                <div>
-                    <span class='editAndDel'><a href='{{url_for('editRestaurant', rest_id=r.id)}}'>Edit</a></span>
-                    <span class='editAndDel'><a href='{{url_for('deleteRestaurant', rest_id=r.id)}}'>Delete</a></span>
+                <div class='options'>
+                    <a class='editAndDel' href='{{url_for('editRestaurant', rest_id=r.id)}}'>Edit</a>
+                    <a class='editAndDel' href='{{url_for('deleteRestaurant', rest_id=r.id)}}'>Delete</a>
                 </div>
             {% endfor %}
 
