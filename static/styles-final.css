@@ -50,6 +50,10 @@ h1 {
     text-transform: uppercase;
 }
 
+.rName:hover {
+    background-color: #ddd;
+}
+
 .editAndDel {
 
 }
