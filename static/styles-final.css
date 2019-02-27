@@ -16,7 +16,7 @@ p {
     margin: 0px;
 }
 
-input {
+input, textarea {
     background: none;
     color: inherit;
     border: none;
