@@ -125,9 +125,10 @@ def restaurantMenuJSON(rest_id):
 
 # Route for menu item for rest_id/item_id by JSON
 @app.route('/restaurants/<int:rest_id>/<int:item_id>/JSON/')
-@app.route('/restaurants/<int:rest_id>/menu/<int:item_id>/JSON')
+@app.route('/restaurants/<int:rest_id>/menu/<int:item_id>/JSON/')
 def menuItemJSON(rest_id, item_id):
-    return "Menu Item"
+    item = session.query(MenuItem).filter_by(id=item_id).one()
+    return jsonify(Item=[item.serialize])
 
 # Run if called by file finalproject.py
 if __name__ == '__main__':
