@@ -8,8 +8,17 @@ course were:
  - Add API calls for: a list of restaurants, a restaurant's menu, a particular menu item
  - Display html pages in a user-friendly manner by adding css
 
+## Initialize the database with:
+```python database_setup.py```
+
+## (Optional) Populate the database with values:
+Note: These values were provided by the Udacity course
+```python lotsofmenus.py```
+
 ## Run the web server with:
 ```python finalproject.py```
+#### Or to detach it:
+```python finalproject.py &```
 
 ## Steps for dependencies:
 ```
