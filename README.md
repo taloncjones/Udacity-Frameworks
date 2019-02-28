@@ -23,17 +23,23 @@ Note: These values were provided by the Udacity course
 ## JSON
 Responses can be requested from the following paths:
 #### RestaurantList: (Lists all restaurants in the database)
-```/JSON/
+```
+/JSON/
 or
-/restaurants/JSON/```
+/restaurants/JSON/
+```
 #### Menu: (Lists all menu items for restaurant supplied by <rest_id>)
-```/restaurants/<int:rest_id>/JSON/
+```
+/restaurants/<int:rest_id>/JSON/
 or
-/restaurants/<int:rest_id>/menu/JSON/```
+/restaurants/<int:rest_id>/menu/JSON/
+```
 #### Item: (Lists details of a single menu item supplied by <item_id>)
-```/restaurants/<int:rest_id>/<int:item_id>/JSON/
+```
+/restaurants/<int:rest_id>/<int:item_id>/JSON/
 or
-/restaurants/<int:rest_id>/menu/<int:item_id>/JSON/```
+/restaurants/<int:rest_id>/menu/<int:item_id>/JSON/
+```
 
 ## Steps for dependencies:
 ```
