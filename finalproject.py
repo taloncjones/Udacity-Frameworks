@@ -109,6 +109,24 @@ def deleteMenuItem(rest_id, item_id):
     else:
         return render_template('deletemenuitem-final.html', rest_id=rest_id, item=deleteItem)
 
+# Route for list of restaurants by JSON
+@app.route('/JSON/')
+@app.route('/restaurants/JSON/')
+def allRestaurantsJSON():
+    return "Restaurant List"
+
+# Route for list of menu items for rest_id by JSON
+@app.route('/restaurants/<int:rest_id>/JSON/')
+@app.route('/restaurants/<int:rest_id>/menu/JSON/')
+def restaurantMenuJSON(rest_id):
+    return "Menu"
+
+# Route for menu item for rest_id/item_id by JSON
+@app.route('/restaurants/<int:rest_id>/<int:item_id>/JSON/')
+@app.route('/restaurants/<int:rest_id>/menu/<int:item_id>/JSON')
+def menuItemJSON(rest_id, item_id):
+    return "Menu Item"
+
 # Run if called by file finalproject.py
 if __name__ == '__main__':
     app.debug = True
