@@ -8,6 +8,10 @@ course were:
  - Add API calls for: a list of restaurants, a restaurant's menu, a particular menu item
  - Display html pages in a user-friendly manner by adding css
 
+Anything with '-final' in the file name was made as part of the final project (with the
+exception of finalproject.py and README.md). The others were either supplied or based off of
+Udacity course lessons (with some personalization).
+
 ## Initialize the database with:
 ```python database_setup.py```
 
