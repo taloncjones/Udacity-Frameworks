@@ -133,6 +133,25 @@ input, textarea {
     border-left: solid 1px #eee;
 }
 
+.header{
+    left: 0px;
+    right: 0px;
+    background-color: #eee;
+    text-align: center;
+}
+
+.backToList {
+    display: inline-block;
+    word-wrap: break-word;
+    width: calc(100% - 6px);
+    height: 100%;
+    padding: 3px;
+    font-family: 'georgia', serif;
+    color: #29508e;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .footer {
     left: 0px;
     right: 0px;
@@ -157,6 +176,6 @@ input, textarea {
     text-transform: uppercase;
 }
 
-.addToList:hover {
+.addToList:hover, .backToList:hover {
     background-color: #ddd;
 }
