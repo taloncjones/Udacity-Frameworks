@@ -13,7 +13,9 @@ course were:
 
 ## (Optional) Populate the database with values:
 Note: These values were provided by the Udacity course
-```python lotsofmenus.py```
+```
+python lotsofmenus.py
+```
 
 ## Run the web server with:
 ```python finalproject.py```
