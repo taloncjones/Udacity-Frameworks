@@ -20,7 +20,7 @@ p, dt {
     color: #29508e;
 }
 
-dd.text {
+.text {
     left: 0px;
     right: 0px;
     border: 1px solid;
@@ -178,4 +178,32 @@ input, textarea {
 
 .addToList:hover, .backToList:hover {
     background-color: #ddd;
+}
+
+.item {
+    display: inline-block;
+    width: 70%;
+    margin-left: -5px;
+    padding-left: 0px;
+}
+
+.price {
+    display: inline-block;
+    text-align: right;
+    width: 15%;
+    margin-right: 0px;
+}
+
+.course {
+    color: #eee;
+    font-family: 'georgia', serif;
+    font-style: italic;
+    font-size: 80%;
+    margin: 0px;
+    padding: 0px 5px;
+}
+
+.description {
+    color: #eee;
+    font-family: 'georgia', serif;
 }
